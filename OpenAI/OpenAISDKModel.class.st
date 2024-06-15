@@ -37,9 +37,9 @@ OpenAISDKModel class >> createWithAPIResponse: aResponse [
 
 	^ self new
 		  ownedBy: (aResponse at: 'owned_by');
-		  parent: (aResponse at: 'parent');
-		  root: (aResponse at: 'root');
-		  permission: (aResponse at: 'permission');
+		  parent: (aResponse at: 'parent' ifAbsent: nil);
+		  root: (aResponse at: 'root' ifAbsent: nil);
+		  permission: (aResponse at: 'permission' ifAbsent: nil);
 		  created: (aResponse at: 'created');
 		  object: (aResponse at: 'object');
 		  id: (aResponse at: 'id')
